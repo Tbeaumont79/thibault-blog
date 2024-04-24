@@ -1,3 +1,5 @@
+import type { _primary } from "#tailwind-config/theme/accentColor";
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -6,8 +8,4 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
 };
