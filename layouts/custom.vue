@@ -5,15 +5,14 @@ const links = [
   { label: "Home", to: "/" },
   { label: "Posts", to: "/posts" },
 ];
-console.log(displayNav.value);
 </script>
 <template>
-  <UContainer
-    class="w-full flex flex-col items-center justify-center p-0 md:p-0 lg:p-0"
+  <UCard
+    class="w-full bg-sky-950 flex flex-col items-center justify-start p-0 md:p-0 lg:p-0"
   >
     <slot name="header">
       <nav
-        class="flex flex-col md:flex-row lg:flex-row items-center justify-center gap-4 h-full w-full bg-sky-950"
+        class="flex flex-col md:flex-row lg:flex-row items-center justify-start gap-4 h-full w-full"
       >
         <div class="md:hidden lg:hidden">
           <div class="flex flex-row gap-4 p-4">
@@ -29,7 +28,7 @@ console.log(displayNav.value);
           </div>
           <ul
             v-if="displayNav"
-            class="flex flex-col items-center justify-start gap-8 text-md h-screen bg-sky-950"
+            class="flex flex-col items-center justify-start gap-8 text-md h-screen"
           >
             <li v-for="(link, index) in links" :key="index">
               <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
@@ -38,11 +37,13 @@ console.log(displayNav.value);
         </div>
 
         <div class="w-full hidden md:flex lg:flex">
-          <nav class="w-full flex flex-row items-center justify-around">
+          <nav
+            class="w-full h-20 flex flex-row items-center justify-start gap-8"
+          >
             <h1 class="text-2xl text-blue-500">Thibault beaumont</h1>
 
             <ul
-              class="flex flex-row items-center justify-center gap-8 h-20 text-md bg-sky-950"
+              class="flex flex-row items-center justify-center text-md gap-8 pt-1"
             >
               <li v-for="(link, index) in links" :key="index">
                 <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
@@ -58,7 +59,7 @@ console.log(displayNav.value);
         class="w-full absolute bottom-0 md:hidden lg:hidden"
       >
         <ul
-          class="flex flex-row items-center justify-center gap-8 h-20 text-md bg-sky-950"
+          class="flex flex-row items-center justify-center gap-8 h-20 text-md"
         >
           <li v-for="(link, index) in links" :key="index">
             <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
@@ -66,5 +67,5 @@ console.log(displayNav.value);
         </ul>
       </div>
     </slot>
-  </UContainer>
+  </UCard>
 </template>
