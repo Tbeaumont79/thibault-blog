@@ -60,8 +60,6 @@ watchEffect(() => {
           :disabled="loading"
         />
       </div>
-      <p>don't have an account ?</p>
-      <UButton @click="navigateTo('/register')">Sign up</UButton>
     </div>
   </form>
 </template>

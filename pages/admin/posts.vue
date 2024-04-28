@@ -8,7 +8,7 @@ onMounted(async () => {
   }
 });
 const handlePost = async () => {
-  const response = await fetch("/api/posts", {
+  const response = await fetch("/api/post", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

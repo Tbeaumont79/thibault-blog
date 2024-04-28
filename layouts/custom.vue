@@ -5,14 +5,15 @@ const links = [
   { label: "Home", to: "/" },
   { label: "Posts", to: "/posts" },
 ];
+console.log(displayNav.value);
 </script>
 <template>
   <UCard
-    class="w-full bg-sky-950 flex flex-col items-center justify-start p-0 md:p-0 lg:p-0"
+    class="w-full flex flex-col p-0 md:p-0 lg:p-0"
   >
     <slot name="header">
       <nav
-        class="flex flex-col md:flex-row lg:flex-row items-center justify-start gap-4 h-full w-full"
+        class="flex flex-col md:flex-row lg:flex-row items-center justify-center gap-4 h-full w-full"
       >
         <div class="md:hidden lg:hidden">
           <div class="flex flex-row gap-4 p-4">
@@ -37,13 +38,11 @@ const links = [
         </div>
 
         <div class="w-full hidden md:flex lg:flex">
-          <nav
-            class="w-full h-20 flex flex-row items-center justify-start gap-8"
-          >
+          <nav class="w-full flex flex-row items-center justify-around">
             <h1 class="text-2xl text-blue-500">Thibault beaumont</h1>
 
             <ul
-              class="flex flex-row items-center justify-center text-md gap-8 pt-1"
+              class="flex flex-row items-center justify-center gap-8 h-20 text-md"
             >
               <li v-for="(link, index) in links" :key="index">
                 <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
