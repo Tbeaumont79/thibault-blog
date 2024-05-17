@@ -36,29 +36,18 @@ watchEffect(() => {
     <div>
       <p class="description p-4 md:p-8">Sign in</p>
       <div class="">
-        <UInput
-          id="email"
-          v-model="email"
-          class="inputField"
-          type="email"
-          placeholder="Your email"
-        />
-        <UInput
+        <label for="email">Email</label>
+        <input id="email" v-model="email" type="email" placeholder="Email" />
+        <label for="password" type="password" placeholder="Password"
+          >Password</label
+        >
+        <input
           id="password"
           v-model="password"
-          class="inputField"
           type="password"
-          placeholder="Your password"
+          placeholder="Password"
         />
-      </div>
-      <div>
-        <UButton
-          label="Login"
-          type="submit"
-          class="button block"
-          :value="loading ? 'Loading' : 'Sign in'"
-          :disabled="loading"
-        />
+        <button class="p-4" :disabled="loading" type="submit">Login</button>
       </div>
     </div>
   </form>

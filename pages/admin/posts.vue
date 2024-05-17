@@ -28,13 +28,14 @@ const handlePost = async () => {
   <div
     class="w-full h-full flex flex-col items-center gap-4 justify-center bg-sky-900 p-4 md:p-8 md:gap-8"
   >
-    <UInput
-      id="posts"
+    <label for="title" class="mb-2 text-xl font-medium text-accent-default"
+      >Title</label
+    >
+    <input
+      id="title"
       v-model="title"
+      class="bg-gray-900 w-full p-4 md:p-8 rounded-lg border border-gray-300 text-white"
       type="text"
-      class="w-full"
-      size="2xl"
-      placeholder="The Title of your post"
     />
     <label
       for="large-input"
@@ -43,8 +44,13 @@ const handlePost = async () => {
     >
     <textarea
       v-model="posts"
-      class="p-4 w-full h-screen text-sm bg-gray-900 rounded-lg border border-gray-300"
+      class="p-4 w-full h-screen text-sm bg-gray-900 rounded-lg border border-gray-300 text-white"
     />
-    <UButton @click="handlePost">Submit</UButton>
+    <button
+      class="p-4 rounded-md bg-accent-300 md:p-4 lg:p-4"
+      @click="handlePost"
+    >
+      Submit
+    </button>
   </div>
 </template>
