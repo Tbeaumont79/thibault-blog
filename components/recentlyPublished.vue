@@ -8,6 +8,10 @@ defineProps({
     type: String,
     required: true,
   },
+  id: {
+    type: Number,
+    required: true,
+  },
 });
 </script>
 <template>
@@ -19,6 +23,12 @@ defineProps({
     <p class="text-sm overflow-hidden h-40 text-lightText py-4">
       {{ content }}
     </p>
-    <button class="text-accent-default text-sm py-4">read more -></button>
+    <NuxtLink
+      class="text-accent-default text-sm py-4"
+      :to="`/posts/${id}`"
+      prefetch
+    >
+      read more -></NuxtLink
+    >
   </section>
 </template>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import type { Post } from "../types/posts";
-const post = ref();
-const posts = ref([]);
+const post = ref<Post>();
+const posts = ref<Post[]>([]);
+const id = ref(0);
 onMounted(async () => {
   const data = await $fetch<{ posts: Post[] }>(
     "http://localhost:3000/api/post",
@@ -10,8 +11,10 @@ onMounted(async () => {
       method: "GET",
     }
   );
+
   posts.value = data.posts;
-  post.value = data.posts[2];
+  id.value = data.posts.length;
+  post.value = data.posts[id.value - 1];
 });
 </script>
 
@@ -31,7 +34,7 @@ onMounted(async () => {
       class="flex flex-col gap-4 md:flex-row md:justify-around lg:flex-row lg:justify-around"
     >
       <section>
-        <RecentlyPublished :title="post?.title" :content="post?.content" />
+        <RecentlyPublished :id="id" :title="post?.title" :content="post?.content" />
       </section>
       <section>
         <Categories />

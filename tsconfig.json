@@ -13,7 +13,6 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios", "@nuxtjs/auth"]
   },
   "exclude": ["./.nuxt/tsconfig.json", "node_modules", ".nuxt", "dist"],
   "include": ["types/**/*.d.ts", "nuxt.config.ts"]

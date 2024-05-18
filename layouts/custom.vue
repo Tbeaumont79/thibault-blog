@@ -3,7 +3,7 @@ const displayNav = ref(false);
 
 const links = [
   { label: "Home", to: "/" },
-  { label: "Posts", to: "/posts" },
+  { label: "Posts", to: "/posts/allPosts" },
 ];
 </script>
 <template>
