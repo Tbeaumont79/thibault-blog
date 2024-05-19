@@ -7,7 +7,7 @@ const links = [
 ];
 </script>
 <template>
-  <div class="w-full">
+  <div class="w-full bg-lightBackground">
     <nav
       class="flex flex-col md:flex-row lg:flex-row items-center justify-center gap-4 h-full w-full"
     >

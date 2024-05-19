@@ -3,7 +3,6 @@ import { onMounted, ref } from "vue";
 import type { Post } from "../types/posts";
 const post = ref<Post>();
 const posts = ref<Post[]>([]);
-const id = ref(0);
 onMounted(async () => {
   const data = await $fetch<{ posts: Post[] }>(
     "http://localhost:3000/api/post",
@@ -13,13 +12,12 @@ onMounted(async () => {
   );
 
   posts.value = data.posts;
-  id.value = data.posts.length;
-  post.value = data.posts[id.value - 1];
+  post.value = data.posts[posts.value.length - 1];
 });
 </script>
 
 <template>
-  <main class="w-full h-screen">
+  <main class="w-full h-screen bg-background">
     <section>
       <figure class="flex justify-end mr-32">
         <NuxtImg
@@ -34,7 +32,7 @@ onMounted(async () => {
       class="flex flex-col gap-4 md:flex-row md:justify-around lg:flex-row lg:justify-around"
     >
       <section>
-        <RecentlyPublished :id="id" :title="post?.title" :content="post?.content" />
+        <RecentlyPublished :id="post?.id" :title="post?.title" :content="post?.content" />
       </section>
       <section>
         <Categories />

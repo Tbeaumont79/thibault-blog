@@ -25,8 +25,19 @@ onMounted(() => {
 });
 </script>
 <template>
-  <main>
-    <h1 class="text-3xl text-lightText">{{ post?.title }}</h1>
-    <p class="text-lightText">{{ post?.content }}</p>
+  <main class="w-full h-full flex flex-col bg-background">
+    <section class="bg-lightBackground p-4 md:p-8 lg:p-8">
+      <div class="flex justify-around">
+        <p class="text-lightText text-sm">Reading time : 10 min</p>
+        <p class="text-lightText text-sm rounded-full bg-background p-2">
+          Category
+        </p>
+      </div>
+    </section>
+    <section class="p-4 md:p-8 lg:p-8 md:w-3/5 lg:w-3/5">
+      <h1 class="text-xl py-8 text-lightText">{{ post?.title }}</h1>
+
+      <p class="text-lightText text-sm leading-loose">{{ post?.content }}</p>
+    </section>
   </main>
 </template>
