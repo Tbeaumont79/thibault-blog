@@ -32,7 +32,14 @@ onMounted(async () => {
       class="flex flex-col gap-4 md:flex-row md:justify-around lg:flex-row lg:justify-around"
     >
       <section>
-        <RecentlyPublished :id="post?.id" :title="post?.title" :content="post?.content" />
+        <h1 class="text-2xl md:text-3xl font-bold text-primary-default p-4">
+          Recently Published
+        </h1>
+        <PreviewPostsCard
+          :id="post?.id"
+          :title="post?.title"
+          :content="post?.content"
+        />
       </section>
       <section>
         <Categories />
