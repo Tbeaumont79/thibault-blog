@@ -10,6 +10,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+       'karla': ['Karla', 'sans-serif'],
+       'inconsolata': ['Inconsolata', 'monospace'],
+      },
       colors: {
         primary: {
           default: "#2E7EFF",

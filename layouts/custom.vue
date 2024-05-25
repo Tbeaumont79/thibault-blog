@@ -18,7 +18,11 @@ const links = [
           </button>
           <div class="sr-only">open mobile Navigation</div>
 
-          <h1 class="text-2xl text-primary-default">Thibault beaumont</h1>
+          <NuxtLink to="/" class="text-2xl text-primary-default"
+            ><h1 class="text-2xl font-karla text-primary-default">
+              Thibault beaumont
+            </h1></NuxtLink
+          >
         </div>
         <ul
           v-if="displayNav"
@@ -26,7 +30,7 @@ const links = [
         >
           <li v-for="(link, index) in links" :key="index">
             <NuxtLink
-              class="text-lightText hover:text-accent-default"
+              class="text-lightText font-inconsolata hover:text-accent-default"
               :to="link.to"
               >{{ link.label }}</NuxtLink
             >
@@ -36,14 +40,17 @@ const links = [
 
       <div class="w-full hidden md:flex lg:flex">
         <nav class="w-full flex flex-row items-center justify-around">
-          <h1 class="text-2xl text-primary-default">Thibault beaumont</h1>
-
+          <NuxtLink to="/" class="text-2xl text-primary-default"
+            ><h1 class="text-2xl font-karla text-primary-default">
+              Thibault beaumont
+            </h1></NuxtLink
+          >
           <ul
             class="flex flex-row items-center justify-center gap-8 h-20 text-md"
           >
             <li v-for="(link, index) in links" :key="index">
               <NuxtLink
-                class="text-lightText hover:text-accent-default"
+                class="text-lightText font-inconsolata hover:text-accent-default"
                 :to="link.to"
                 >{{ link.label }}</NuxtLink
               >
@@ -61,7 +68,7 @@ const links = [
       <ul class="flex flex-row items-center justify-center gap-8 h-20 text-md">
         <li v-for="(link, index) in links" :key="index">
           <NuxtLink
-            class="text-lightText hover:text-accent-default"
+            class="text-lightText font-inconsolata hover:text-accent-default"
             :to="link.to"
             >{{ link.label }}</NuxtLink
           >

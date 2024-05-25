@@ -9,16 +9,16 @@ const props = defineProps<{
 </script>
 <template>
   <section class="flex-col pt-10">
-    <h2 class="text-2xl md:text-3xl font-bold text-primary-default">
+    <h2 class="text-xl font-karla md:text-2xl lg:text-2xl font-bold text-primary-default">
       Popular Posts
     </h2>
     <ul>
       <li
         v-for="(post, index) in props.posts"
         :key="index"
-        class="text-lightText py-4"
+        class="text-lightText font-inconsolata py-4"
       >
-        -> {{ post.title }}
+        <NuxtLink :to="`/posts/${post.id}`" prefetch>-> {{ post.title }}</NuxtLink>
       </li>
     </ul>
   </section>

@@ -22,7 +22,7 @@ onMounted(async () => {
       <div
         v-for="(data, index) in posts"
         :key="index"
-        class="w-80 h-60 bg-lightBackground hover:shadow-[0_35px_60px_-15px_rgba(0,125,0,0.5)]"
+        class="w-80 h-60 bg-lightBackground rounded-lg hover:shadow-[0_35px_60px_-15px_rgba(0,35,0,0.5)]"
       >
         <PreviewPostsCard
           :id="data.id"

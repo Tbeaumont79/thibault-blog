@@ -18,8 +18,8 @@ onMounted(async () => {
 
 <template>
   <main class="w-full h-screen bg-background">
-    <section>
-      <figure class="flex justify-end mr-32">
+    <section class="block relative w-full h-64">
+      <figure class="flex absolute right-48 top-10">
         <NuxtImg
           src="/humanicon.svg"
           width="300"
@@ -32,9 +32,9 @@ onMounted(async () => {
       class="flex flex-col gap-4 md:flex-row md:justify-around lg:flex-row lg:justify-around"
     >
       <section>
-        <h1 class="text-2xl md:text-3xl font-bold text-primary-default p-4">
+        <h2 class="text-2xl font-bold text-primary-default p-4">
           Recently Published
-        </h1>
+        </h2>
         <PreviewPostsCard
           :id="post?.id"
           :title="post?.title"
@@ -42,7 +42,7 @@ onMounted(async () => {
         />
       </section>
       <section>
-        <Categories />
+        <CategoriesCard />
         <PopularPosts :posts="posts" />
       </section>
     </aside>

@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
     const client = await serverSupabaseClient(event);
-
+    console.log(body);
     const { data, error } = await client.from("posts").insert([body]);
     if (error) {
       console.error("Error inserting data:", error);
@@ -12,9 +12,9 @@ export default defineEventHandler(async (event) => {
     }
 
     return { posts: data };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (err: any) {
-    console.error("Server error:", err);
-    return { error: err.message };
+  } catch (error) {
+    const typedError = error as { message: string };
+    console.error("Error inserting data:", typedError);
+    return { error: typedError.message };
   }
 });

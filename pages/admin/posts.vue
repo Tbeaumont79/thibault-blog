@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const title = ref("");
 const posts = ref("");
+const category = ref([""]);
 const user = useSupabaseUser();
 onMounted(async () => {
   if (!user.value) {
@@ -16,6 +17,7 @@ const handlePost = async () => {
     body: JSON.stringify({
       title: title.value,
       content: posts.value,
+      categories: [category.value],
       author_id: user.value?.id,
     }),
   });
@@ -37,6 +39,17 @@ const handlePost = async () => {
       class="bg-gray-900 w-full p-4 md:p-8 rounded-lg border border-gray-300 text-white"
       type="text"
     />
+    <label
+      for="category"
+      class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >
+      Category :
+    </label>
+    <select v-model="category" id="category-select" name="category">
+      <option value="">Please select an option :</option>
+      <option value="Life lesson">Life lesson</option>
+      <option value="Web dev">Web dev</option>
+    </select>
     <label
       for="large-input"
       class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
